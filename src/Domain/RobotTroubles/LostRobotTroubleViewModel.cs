@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents a lost robot trouble.
     /// </summary>
-    public struct LostRobotTroubleViewModel : IRobotTrouble
+    public class LostRobotTroubleViewModel : IRobotTrouble
     {
         private const string TroubleCode = "LOST";
 

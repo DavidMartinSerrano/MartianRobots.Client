@@ -1,4 +1,5 @@
 ﻿using RodriBus.MartianRobots.Domain.RobotTroubles;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
@@ -10,6 +11,19 @@ namespace RodriBus.MartianRobots.Domain
     [DebuggerDisplay("{Coordinates.DebuggerDisplay,nq} - {Orientation,nq}")]
     public class RobotViewModel
     {
+        /// <summary>
+        /// Ctor
+        /// </summary>
+        public RobotViewModel()
+        {
+            Troubles = new List<IRobotTrouble>();
+
+        }
+        /// <summary>
+        /// Id
+        /// </summary>
+        public Guid Id { get; set; }
+
         /// <summary>
         /// Current coordinates.
         /// </summary>
@@ -23,7 +37,7 @@ namespace RodriBus.MartianRobots.Domain
         /// <summary>
         /// Reported troubles.
         /// </summary>
-        public IList<IRobotTrouble> Troubles { get; } = new List<IRobotTrouble>();
+        public IList<IRobotTrouble> Troubles { get; set; }
 
         /// <summary>
         /// Creates an instance.
@@ -32,6 +46,7 @@ namespace RodriBus.MartianRobots.Domain
         {
             Coordinates = coordinates;
             Orientation = orientation;
+            Troubles = new List<IRobotTrouble>();
         }
     }
 }

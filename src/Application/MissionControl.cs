@@ -61,5 +61,27 @@ namespace RodriBus.MartianRobots.Application
 
             action.Execute(CurrentRobot, Map);
         }
+
+        /// <summary>
+        /// Updates the current robot
+        /// </summary>
+        public void UpdateRobot()
+        {
+            if (CurrentRobot is null)
+            {
+                throw new InvalidOperationException("There is no robot deployed yet.");
+            }
+
+            repository.UpdateRobot(CurrentRobot);
+        }
+
+
+        /// <summary>
+        /// Delete all robots for clean state
+        /// </summary>
+        public void DeleteRobots()
+        {
+            repository.DeleteAll();
+        }
     }
 }

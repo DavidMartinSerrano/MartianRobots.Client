@@ -39,6 +39,9 @@ var instructionPairs = new Dictionary<string, string> {
     { "0 3 W", "LLFFFLFLFL" },
 };
 
+//Delete robots for starting with a clean state
+control.DeleteRobots();
+
 console.WriteLine(">_ Processing instructions:");
 foreach (var pair in instructionPairs)
 {
@@ -52,6 +55,7 @@ foreach (var pair in instructionPairs)
     {
         // SEND INSTRUCTION(S)
         control.CommandRobot(instruction);
+        control.UpdateRobot();
     }
 }
 

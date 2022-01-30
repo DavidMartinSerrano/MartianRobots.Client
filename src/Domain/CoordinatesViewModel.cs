@@ -7,8 +7,15 @@ namespace RodriBus.MartianRobots.Domain
     /// Tridimensional space coordinates.
     /// </summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public struct CoordinatesViewModel : IEquatable<CoordinatesViewModel>
+    public class CoordinatesViewModel : IEquatable<CoordinatesViewModel>
     {
+        /// <summary>
+        /// ctpr
+        /// </summary>
+        public CoordinatesViewModel()
+        {
+
+        }
         /// <summary>
         /// Max allowed coordinate in any axis.
         /// </summary>
